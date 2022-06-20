@@ -6,10 +6,12 @@
 .downloadmessage {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: space-around;
   background-color: #e93f34;
   padding: 10px;
   margin-top: 20px;
+  margin-bottom: 40px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 .downloadText {
@@ -21,9 +23,34 @@
   height: 40px;
   margin-right: 5px;
 }
+.loadmorecenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+.loadmore {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  padding: 7px 25px;
+  font-size: 13px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
 
 @media screen and (max-width: 800px) {
   .downloadmessage {
     display: none;
   }
+
+  /* .loadmore {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    padding: 7px 25px;
+    font-size: 13px;
+    margin-top: -20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+      0 2px 10px 0 rgba(0, 0, 0, 0.16);
+  } */
 }

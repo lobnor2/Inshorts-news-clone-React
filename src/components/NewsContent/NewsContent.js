@@ -5,7 +5,7 @@ import Appleicon from "../../assets/ios_app_store.png";
 import Androidicon from "../../assets/android_app_store.png";
 import NewsCard from "../NewsCard/NewsCard";
 
-const NewsContent = ({ newsArray, newsResults }) => {
+const NewsContent = ({ newsArray, newsResults, loadmore, setLoadmore }) => {
   return (
     <Container maxWidth="md">
       <div className="content">
@@ -17,9 +17,22 @@ const NewsContent = ({ newsArray, newsResults }) => {
           <img src={Appleicon} alt="ios app store icon" />
           <img src={Androidicon} alt="android store icon " />
         </div>
-        <NewsCard />
-        <NewsCard />
-        <NewsCard />
+        {newsArray.map((newsItem) => (
+          <NewsCard newsItem={newsItem} key={newsItem.title} />
+        ))}
+        {/* <hr /> */}
+        {loadmore <= newsResults && (
+          <>
+            <div className="loadmorecenter">
+              <button
+                className="loadmore"
+                onClick={() => setLoadmore(loadmore + 20)}
+              >
+                Load More
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </Container>
   );
